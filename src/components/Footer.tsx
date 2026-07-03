@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { CONTENT } from '@/data/content';
-import { Instagram } from 'lucide-react';
-import { SiTiktok } from 'react-icons/si';
+import { SiInstagram, SiTiktok } from 'react-icons/si';
 
 export default function Footer() {
   return (
@@ -29,7 +28,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary transition-all duration-300"
               >
-                <Instagram size={20} />
+                <SiInstagram size={18} />
               </a>
               <a 
                 href={CONTENT.identity.social.tiktok} 
@@ -73,7 +72,7 @@ export default function Footer() {
                       className="text-white/50 hover:text-primary transition-colors"
                       title="Instagram"
                     >
-                      <Instagram size={14} />
+                      <SiInstagram size={14} />
                     </a>
                     <a
                       href={CONTENT.identity.social.tiktok}
