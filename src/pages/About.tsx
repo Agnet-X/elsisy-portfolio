@@ -2,8 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CONTENT } from '@/data/content';
 import { Award, Camera, Video, Plane } from 'lucide-react';
+import { useLang } from '@/context/LanguageContext';
+import { T } from '@/data/translations';
 
 export default function About() {
+  const { lang } = useLang();
+  const t = T[lang].about;
+
   return (
     <div className="min-h-screen bg-background pt-32 pb-24 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
@@ -14,35 +19,35 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-6">About the artist</p>
+            <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-6">{t.label}</p>
             <h1 className="text-5xl md:text-7xl font-serif text-white mb-8 leading-tight">
-              Mastering the <span className="text-primary italic">Light</span>
+              {t.title} <span className="text-primary italic">{t.titleItalic}</span>
             </h1>
             <div className="space-y-6 text-white/70 font-light text-lg leading-relaxed">
               {CONTENT.biography.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
               <p className="text-white font-serif italic text-2xl pt-4 border-t border-white/10">
-                "Technical perfection is the baseline. Emotional impact is the goal."
+                {t.quote}
               </p>
             </div>
-            
+
             <div className="flex items-center gap-8 mt-12 pt-12 border-t border-white/5">
               <div>
                 <p className="text-3xl font-serif text-white mb-1">8+</p>
-                <p className="text-xs text-white/50 uppercase tracking-widest">Years Exp.</p>
+                <p className="text-xs text-white/50 uppercase tracking-widest">{t.yearsExp}</p>
               </div>
               <div>
                 <p className="text-3xl font-serif text-white mb-1">12</p>
-                <p className="text-xs text-white/50 uppercase tracking-widest">Major Networks</p>
+                <p className="text-xs text-white/50 uppercase tracking-widest">{t.networks}</p>
               </div>
               <div>
                 <p className="text-3xl font-serif text-white mb-1">∞</p>
-                <p className="text-xs text-white/50 uppercase tracking-widest">Frames Captured</p>
+                <p className="text-xs text-white/50 uppercase tracking-widest">{t.frames}</p>
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -50,16 +55,15 @@ export default function About() {
             className="relative"
           >
             <div className="aspect-[3/4] rounded-sm overflow-hidden relative z-10">
-              <div className="absolute inset-0 bg-black/40 z-10"></div>
-              <img 
-                src="/images/portrait-hero.jpeg" 
-                alt="Mohammed Fareed Elsisy" 
+              <div className="absolute inset-0 bg-black/40 z-10" />
+              <img
+                src="/images/portrait-hero.jpeg"
+                alt="Mohammed Fareed Elsisy"
                 className="w-full h-full object-cover object-right"
               />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -inset-4 border border-primary/20 rounded-sm z-0 translate-x-8 translate-y-8"></div>
-            <div className="absolute -left-12 top-1/4 w-24 h-24 bg-primary/20 blur-[50px] z-20"></div>
+            <div className="absolute -inset-4 border border-primary/20 rounded-sm z-0 translate-x-8 translate-y-8" />
+            <div className="absolute -left-12 top-1/4 w-24 h-24 bg-primary/20 blur-[50px] z-20" />
           </motion.div>
         </div>
 
@@ -72,35 +76,17 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-white mb-4">Technical <span className="italic text-primary">Arsenal</span></h2>
-            <p className="text-white/50 max-w-2xl mx-auto">Mastery over the tools of the trade is what separates good shots from unforgettable cinematic experiences.</p>
+            <h2 className="text-4xl font-serif text-white mb-4">
+              {t.arsenalTitle} <span className="italic text-primary">{t.arsenalItalic}</span>
+            </h2>
+            <p className="text-white/50 max-w-2xl mx-auto">{t.arsenalDesc}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SkillCard 
-              icon={<Camera />} 
-              title="Equipment" 
-              items={CONTENT.skills.equipment} 
-              delay={0}
-            />
-            <SkillCard 
-              icon={<Video />} 
-              title="Software" 
-              items={CONTENT.skills.software} 
-              delay={0.1}
-            />
-            <SkillCard 
-              icon={<Plane />} 
-              title="Expertise" 
-              items={CONTENT.skills.expertise} 
-              delay={0.2}
-            />
-            <SkillCard 
-              icon={<Award />} 
-              title="Languages" 
-              items={CONTENT.skills.languages} 
-              delay={0.3}
-            />
+            <SkillCard icon={<Camera />} title={t.equipment} items={CONTENT.skills.equipment} delay={0} />
+            <SkillCard icon={<Video />} title={t.software} items={CONTENT.skills.software} delay={0.1} />
+            <SkillCard icon={<Plane />} title={t.expertise} items={CONTENT.skills.expertise} delay={0.2} />
+            <SkillCard icon={<Award />} title={t.languages} items={CONTENT.skills.languages} delay={0.3} />
           </div>
         </div>
 
@@ -112,16 +98,16 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="glass border border-white/10 rounded-2xl p-8 md:p-16 relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px]"></div>
-          
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px]" />
+
           <h2 className="text-3xl font-serif text-white mb-12 flex items-center gap-4">
-            <Award className="text-primary" /> Recognitions
+            <Award className="text-primary" /> {t.recognitions}
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {CONTENT.awards.map((award, i) => (
               <div key={i} className="border-l border-primary/30 pl-6 relative">
-                <div className="absolute w-2 h-2 rounded-full bg-primary -left-[4.5px] top-1"></div>
+                <div className="absolute w-2 h-2 rounded-full bg-primary -left-[4.5px] top-1" />
                 <span className="text-primary text-sm font-bold tracking-wider">{award.year}</span>
                 <h3 className="text-xl text-white font-serif mt-2 mb-2">{award.title}</h3>
                 <p className="text-white/60 font-light text-sm">{award.description}</p>
@@ -134,7 +120,7 @@ export default function About() {
   );
 }
 
-function SkillCard({ icon, title, items, delay }: { icon: React.ReactNode, title: string, items: string[], delay: number }) {
+function SkillCard({ icon, title, items, delay }: { icon: React.ReactNode; title: string; items: string[]; delay: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

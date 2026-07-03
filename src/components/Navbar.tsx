@@ -3,40 +3,41 @@ import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { CONTENT } from '@/data/content';
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/projects", label: "Projects" },
-  { href: "/credentials", label: "Credentials" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/experience", label: "Experience" },
-  { href: "/clients", label: "Clients" },
-  { href: "/contact", label: "Contact" }
-];
+import { useLang } from '@/context/LanguageContext';
+import { T } from '@/data/translations';
 
 export default function Navbar() {
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { lang, setLang } = useLang();
+  const t = T[lang].nav;
+
+  const navLinks = [
+    { href: "/", label: t.home },
+    { href: "/portfolio", label: t.portfolio },
+    { href: "/projects", label: t.projects },
+    { href: "/credentials", label: t.credentials },
+    { href: "/about", label: t.about },
+    { href: "/services", label: t.services },
+    { href: "/experience", label: t.experience },
+    { href: "/clients", label: t.clients },
+    { href: "/contact", label: t.contact },
+  ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when location changes
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
 
   return (
     <>
-      <header 
+      <header
         className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ${
           scrolled ? 'py-4 glass border-b border-white/5' : 'py-8 bg-transparent'
         }`}
@@ -49,35 +50,52 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-12">
+          <nav className="hidden md:flex items-center gap-8 lg:gap-10">
             {navLinks.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href}
-                className="relative group"
-              >
-                <span className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors duration-300 ${
-                  location === link.href ? 'text-primary' : 'text-white/70 group-hover:text-white'
-                }`}>
+              <Link key={link.href} href={link.href} className="relative group">
+                <span
+                  className={`text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-300 ${
+                    location === link.href
+                      ? 'text-primary'
+                      : 'text-white/70 group-hover:text-white'
+                  }`}
+                >
                   {link.label}
                 </span>
                 {location === link.href && (
-                  <motion.div 
+                  <motion.div
                     layoutId="navbar-indicator"
                     className="absolute -bottom-2 left-0 right-0 h-[1px] bg-primary"
                   />
                 )}
               </Link>
             ))}
+
+            {/* Language Toggle */}
+            <button
+              onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+              className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/20 hover:border-primary/60 transition-colors text-xs font-semibold uppercase tracking-wider text-white/70 hover:text-primary"
+            >
+              {lang === 'en' ? 'ع' : 'EN'}
+            </button>
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden relative z-[100] text-white p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile right side */}
+          <div className="md:hidden flex items-center gap-3 relative z-[100]">
+            {/* Language Toggle Mobile */}
+            <button
+              onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
+              className="flex items-center px-3 py-1.5 rounded-full border border-white/20 hover:border-primary/60 transition-colors text-xs font-semibold text-white/70 hover:text-primary"
+            >
+              {lang === 'en' ? 'ع' : 'EN'}
+            </button>
+            <button
+              className="text-white p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -91,7 +109,7 @@ export default function Navbar() {
             transition={{ duration: 0.5, ease: [0.77, 0, 0.175, 1] }}
             className="fixed inset-0 z-[80] bg-background flex flex-col items-center justify-center"
           >
-            <div className="absolute inset-0 bg-[url('/images/portrait-hero.jpeg')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-[url('/images/portrait-hero.jpeg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
             <nav className="flex flex-col items-center gap-8 relative z-10">
               {navLinks.map((link, i) => (
                 <motion.div
@@ -100,7 +118,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + i * 0.1 }}
                 >
-                  <Link 
+                  <Link
                     href={link.href}
                     className={`font-serif text-4xl font-light tracking-wide ${
                       location === link.href ? 'text-primary' : 'text-white'
@@ -111,15 +129,20 @@ export default function Navbar() {
                 </motion.div>
               ))}
             </nav>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
               className="absolute bottom-12 text-center"
             >
-              <p className="text-white/50 text-sm mb-4">Get in touch</p>
-              <a href={`mailto:${CONTENT.identity.email}`} className="text-primary font-serif tracking-wider">
+              <p className="text-white/50 text-sm mb-4">
+                {lang === 'en' ? 'Get in touch' : 'تواصل معي'}
+              </p>
+              <a
+                href={`mailto:${CONTENT.identity.email}`}
+                className="text-primary font-serif tracking-wider"
+              >
                 {CONTENT.identity.email}
               </a>
             </motion.div>

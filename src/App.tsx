@@ -3,6 +3,7 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { LanguageProvider } from '@/context/LanguageContext';
 
 // Components
 import ScrollProgress from '@/components/ScrollProgress';
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
       <TooltipProvider>
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
         
@@ -65,6 +67,7 @@ function App() {
         </div>
         <Toaster />
       </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

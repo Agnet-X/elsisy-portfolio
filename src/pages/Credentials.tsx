@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { useLang } from '@/context/LanguageContext';
+import { T } from '@/data/translations';
 
 const images = Array.from({ length: 28 }, (_, i) => ({
   id: i + 1,
@@ -9,30 +11,26 @@ const images = Array.from({ length: 28 }, (_, i) => ({
 }));
 
 export default function Credentials() {
+  const { lang } = useLang();
+  const t = T[lang].credentials;
   const [selected, setSelected] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <div className="min-h-screen bg-background pt-32 pb-24">
-      {/* Header */}
       <div className="container mx-auto px-6 md:px-12 mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">
-            Proof of Work
-          </p>
+          <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">{t.label}</p>
           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
-            Credentials &amp; <span className="italic text-white/50">Gallery</span>
+            {t.title} <span className="italic text-white/50">{t.titleItalic}</span>
           </h1>
-          <p className="text-white/50 font-light max-w-xl leading-relaxed">
-            Certificates, syndicate cards, and behind-the-lens moments from years of professional work across the UAE and the region.
-          </p>
+          <p className="text-white/50 font-light max-w-xl leading-relaxed">{t.desc}</p>
         </motion.div>
       </div>
 
-      {/* Masonry Grid */}
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4"
@@ -63,7 +61,6 @@ export default function Credentials() {
         </motion.div>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selected && (
           <motion.div
