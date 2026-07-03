@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.replit-artifact/
+.vscode/
+.env
+.env.*
+.DS_Store
