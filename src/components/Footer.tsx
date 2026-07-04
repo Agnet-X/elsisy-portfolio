@@ -107,9 +107,6 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">
-            &copy; {new Date().getFullYear()} {CONTENT.identity.name}. {tf.rights}
-          </p>
           <p className="text-white/40 text-sm font-serif italic">{tf.tagline}</p>
         </div>
       </div>
