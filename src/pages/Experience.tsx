@@ -18,7 +18,7 @@ export default function Experience() {
           className="mb-24"
         >
           <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">{t.label}</p>
-          <h1 className="text-5xl md:text-7xl font-serif text-white mb-8">
+          <h1 className="fluid-hero font-serif text-white mb-8">
             {t.title} <span className="italic text-white/50">{t.titleItalic}</span>
           </h1>
         </motion.div>
@@ -69,7 +69,7 @@ export default function Experience() {
           className="mt-40"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif text-white mb-4">{t.networksTitle}</h2>
+            <h2 className="fluid-heading font-serif text-white mb-4">{t.networksTitle}</h2>
             <p className="text-white/50 font-light">{t.networksDesc}</p>
           </div>
 

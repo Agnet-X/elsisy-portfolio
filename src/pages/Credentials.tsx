@@ -24,10 +24,10 @@ export default function Credentials() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">{t.label}</p>
-          <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+          <h1 className="fluid-hero font-serif text-white mb-6">
             {t.title} <span className="italic text-white/50">{t.titleItalic}</span>
           </h1>
-          <p className="text-white/50 font-light max-w-xl leading-relaxed">{t.desc}</p>
+          <p className="fluid-body text-white/50 font-light max-w-xl leading-relaxed">{t.desc}</p>
         </motion.div>
       </div>
 

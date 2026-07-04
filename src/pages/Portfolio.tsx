@@ -24,7 +24,7 @@ export default function Portfolio() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">{t.label}</p>
-          <h1 className="text-5xl md:text-7xl font-serif text-white mb-8">
+          <h1 className="fluid-hero font-serif text-white mb-8">
             {t.title} <span className="italic text-white/50">{t.titleItalic}</span>
           </h1>
         </motion.div>

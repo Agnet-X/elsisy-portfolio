@@ -8,6 +8,7 @@ import { T } from '@/data/translations';
 export default function Contact() {
   const { lang } = useLang();
   const t = T[lang].contact;
+  const ts = T[lang].services;
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -30,10 +31,10 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <h1 className="text-5xl md:text-8xl font-serif text-white mb-6 tracking-tighter">
+          <h1 className="fluid-hero font-serif text-white mb-6 tracking-tighter">
             {t.title} <span className="italic text-primary">{t.titleItalic}</span>
           </h1>
-          <p className="text-white/60 text-lg font-light max-w-xl">{t.desc}</p>
+          <p className="fluid-body text-white/60 font-light max-w-xl">{t.desc}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -141,7 +142,7 @@ export default function Contact() {
                     className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
                   >
                     <option value="" disabled>{t.serviceDefault}</option>
-                    {CONTENT.services.map((s, i) => (
+                    {ts.items.map((s, i) => (
                       <option key={i} value={s.title}>{s.title}</option>
                     ))}
                     <option value="other">{t.serviceOther}</option>

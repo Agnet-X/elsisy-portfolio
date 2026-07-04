@@ -20,11 +20,11 @@ export default function About() {
             transition={{ duration: 1 }}
           >
             <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-6">{t.label}</p>
-            <h1 className="text-5xl md:text-7xl font-serif text-white mb-8 leading-tight">
+            <h1 className="fluid-hero font-serif text-white mb-8 leading-tight">
               {t.title} <span className="text-primary italic">{t.titleItalic}</span>
             </h1>
             <div className="space-y-6 text-white/70 font-light text-lg leading-relaxed">
-              {CONTENT.biography.map((para, i) => (
+              {t.biography.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
               <p className="text-white font-serif italic text-2xl pt-4 border-t border-white/10">
@@ -76,7 +76,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-white mb-4">
+            <h2 className="fluid-heading font-serif text-white mb-4">
               {t.arsenalTitle} <span className="italic text-primary">{t.arsenalItalic}</span>
             </h2>
             <p className="text-white/50 max-w-2xl mx-auto">{t.arsenalDesc}</p>
@@ -100,7 +100,7 @@ export default function About() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px]" />
 
-          <h2 className="text-3xl font-serif text-white mb-12 flex items-center gap-4">
+          <h2 className="fluid-heading font-serif text-white mb-12 flex items-center gap-4">
             <Award className="text-primary" /> {t.recognitions}
           </h2>
 

@@ -54,6 +54,11 @@ export const T = {
       expertise: "Expertise",
       languages: "Languages",
       recognitions: "Recognitions",
+      biography: [
+        "Mohammed Fareed Elsisy is a UAE-based videographer and editor with over 8 years of experience across television production, live events, sports broadcasting, and documentary filmmaking.",
+        "He served as the personal photographer and videographer for Sheikh Humaid bin Khalid Al Qasimi — a role that demanded an elite level of professionalism, discretion, and visual precision. His work has shaped the visual record of some of the UAE's most significant governmental and cultural events.",
+        "His technical mastery spans high-performance cinema cameras, all types of gimbals and stabilisers, large event cranes, SNG satellite broadcast engineering, and the full DJI drone fleet. He operates fluently in Arabic and English across both regional and international media environments.",
+      ],
     },
 
     services: {
@@ -66,6 +71,14 @@ export const T = {
         "Whether it's a documentary, a live sports event, or corporate cinematography, let's discuss how we can bring your vision to reality.",
       ctaBtn: "Start the Conversation",
       inquire: "Inquire",
+      items: [
+        { title: "Videography", description: "Professional video production for events, television, and commercial projects using high-end cinema cameras and support equipment." },
+        { title: "Video Editing", description: "Cinematic post-production including color grading, motion graphics, and sound design." },
+        { title: "Drone Cinematography", description: "Aerial videography with the full DJI drone fleet — sweeping landscapes, live events, and dramatic overhead coverage." },
+        { title: "Live Event Coverage", description: "Full production support for governmental ceremonies, sports events, live broadcasts, and high-protocol occasions." },
+        { title: "SNG Engineering", description: "Satellite News Gathering technical setup and operations for live broadcast transmission." },
+        { title: "Photography", description: "Professional still photography for events, official portraits, editorial, and commercial assignments." },
+      ],
     },
 
     experience: {
@@ -88,6 +101,56 @@ export const T = {
       title: "Major",
       titleItalic: "Projects",
       viewPortfolio: "View Full Portfolio",
+      featured: [
+        {
+          num: "01",
+          title: "Dubai Sports Council",
+          subtitle: "Sports Media — 2022–2023",
+          image: "/images/portfolio-awards.jpeg",
+          description: "Comprehensive visual coverage of Dubai Sports Council activities over two years — spanning the Golden Globe Sports Awards, cycling races, legend matches, and official governmental events. Work broadcast across BeIN Sports, Abu Dhabi TV, and Al Kass Sports.",
+          tags: ["Live Events", "Sports Broadcasting", "Awards Ceremonies"],
+        },
+        {
+          num: "02",
+          title: "Jetpack World Record — Dubai",
+          subtitle: "Action & Aerial — Sports",
+          image: "/images/portfolio-jetpack.jpeg",
+          description: "High-stakes production coverage of a world-record jetpack flight over Dubai's iconic skyline. Required precision aerial drone work, long-lens ground coverage, and live event coordination — all delivered under extreme time pressure.",
+          tags: ["Aerial Videography", "Action Sports", "Drone"],
+        },
+        {
+          num: "03",
+          title: "UAE Tour — Cycling Championship",
+          subtitle: "Sports Broadcasting",
+          image: "/images/portfolio-cycling.jpeg",
+          description: "Official media production for the UAE Tour cycling championship. Covered the opening ceremony, start line, and stage racing across Sharjah — combining fast-paced action shots with ceremonial documentation involving senior officials.",
+          tags: ["Sports", "Official Coverage", "Live Broadcast"],
+        },
+        {
+          num: "04",
+          title: 'Program "Aghla mn Alzahab"',
+          subtitle: "Television Production — LBC, MBC & 5 other channels",
+          image: "/images/portfolio-sheikh.jpeg",
+          description: 'Served as lead videographer and editor for the popular television program "Aghla mn Alzahab," broadcast across 7 Arab channels including LBC, MBC, and Rotana. Managed all on-location shoots and full post-production.',
+          tags: ["Television", "Editing", "Multi-channel"],
+        },
+        {
+          num: "05",
+          title: "Dubai Desert Classic — Golf",
+          subtitle: "Sports — DP World Tour / Rolex Series",
+          image: "/images/portfolio-golf.jpeg",
+          description: "Official media photography and videography for the Hero Dubai Desert Classic, a prestigious Rolex Series event on the DP World Tour. Coverage included the trophy presentation ceremony attended by senior UAE government officials.",
+          tags: ["Golf", "Official Coverage", "Sports"],
+        },
+        {
+          num: "06",
+          title: "Dubai Sports Excellence Model 2023",
+          subtitle: "Ceremonies & Awards",
+          image: "/images/portfolio-excellence.jpeg",
+          description: "Complete production coverage of the Dubai Sports Excellence Model 2023 ceremony — a formal awards event recognising outstanding contributions to sport in Dubai, presided over by senior officials from Dubai Sports Council.",
+          tags: ["Awards", "Government", "Official"],
+        },
+      ],
     },
 
     clients: {
@@ -194,6 +257,11 @@ export const T = {
       expertise: "التخصصات",
       languages: "اللغات",
       recognitions: "التكريمات",
+      biography: [
+        "محمد فريد الصيصي مصوّر ومونتير فيديو مقيم في الإمارات، يمتلك أكثر من 8 سنوات من الخبرة في الإنتاج التلفزيوني والفعاليات المباشرة والبث الرياضي وصناعة الأفلام الوثائقية.",
+        "شغل منصب المصوّر الشخصي للشيخ حميد بن خالد القاسمي — وهو دور يتطلب مستوى رفيعاً من الاحترافية والتقدير والدقة البصرية. أسهمت أعماله في توثيق أبرز الفعاليات الحكومية والثقافية في الإمارات.",
+        "تشمل إتقانه التقني كاميرات السينما عالية الأداء، وجميع أنواع الجيمبال وأجهزة التثبيت، والرافعات الكبرى للفعاليات، وهندسة البث الفضائي SNG، وكامل أسطول طائرات DJI. يعمل بطلاقة باللغتين العربية والإنجليزية في البيئات الإعلامية الإقليمية والدولية.",
+      ],
     },
 
     services: {
@@ -206,6 +274,14 @@ export const T = {
         "سواء كان فيلماً وثائقياً أو فعالية رياضية مباشرة أو تصويراً تجارياً، دعنا نناقش كيف نحوّل رؤيتك إلى واقع.",
       ctaBtn: "ابدأ المحادثة",
       inquire: "استفسر",
+      items: [
+        { title: "تصوير فيديو", description: "إنتاج فيديو احترافي للفعاليات والتلفزيون والمشاريع التجارية باستخدام كاميرات سينمائية عالية الجودة ومعدات الدعم." },
+        { title: "مونتاج فيديو", description: "ما بعد الإنتاج السينمائي بما يشمل تصحيح الألوان والموشن جرافيك وتصميم الصوت." },
+        { title: "تصوير جوي بالدرون", description: "تصوير جوي بكامل أسطول DJI — مناظر بانورامية واسعة وفعاليات مباشرة وتغطيات جوية مثيرة." },
+        { title: "تغطية الفعاليات المباشرة", description: "دعم إنتاجي كامل للحفلات الحكومية والفعاليات الرياضية والبث المباشر والمناسبات الرفيعة المستوى." },
+        { title: "هندسة SNG", description: "إعداد وتشغيل منظومة التجميع الإخباري عبر الأقمار الاصطناعية لبث مباشر بلا انقطاع." },
+        { title: "تصوير فوتوغرافي", description: "تصوير فوتوغرافي احترافي للفعاليات والبورتريه الرسمي والتحريري والإعلانات التجارية." },
+      ],
     },
 
     experience: {
@@ -228,6 +304,56 @@ export const T = {
       title: "مشاريع",
       titleItalic: "كبرى",
       viewPortfolio: "عرض كامل الأعمال",
+      featured: [
+        {
+          num: "٠١",
+          title: "مجلس دبي الرياضي",
+          subtitle: "إعلام رياضي — 2022–2023",
+          image: "/images/portfolio-awards.jpeg",
+          description: "تغطية بصرية شاملة لأنشطة مجلس دبي الرياضي على مدى عامين — تشمل جوائز الكرة الذهبية الرياضية وسباقات الدراجات ومباريات الأساطير والفعاليات الحكومية الرسمية. بُثّ العمل عبر beIN Sports وأبوظبي TV والكأس.",
+          tags: ["فعاليات مباشرة", "بث رياضي", "حفلات توزيع جوائز"],
+        },
+        {
+          num: "٠٢",
+          title: "الرقم القياسي العالمي للجيت باك — دبي",
+          subtitle: "أكشن وجوي — رياضة",
+          image: "/images/portfolio-jetpack.jpeg",
+          description: "تغطية إنتاجية لرحلة الرقم القياسي العالمي للجيت باك فوق أفق دبي الأيقوني. تطلّب العمل دقة في تصوير الدرون الجوي والتغطية الأرضية بعدسات طويلة وتنسيق الفعالية المباشرة — كل ذلك تحت ضغط زمني شديد.",
+          tags: ["تصوير جوي", "رياضة أكشن", "درون"],
+        },
+        {
+          num: "٠٣",
+          title: "جولة الإمارات — بطولة الدراجات",
+          subtitle: "بث رياضي",
+          image: "/images/portfolio-cycling.jpeg",
+          description: "إنتاج إعلامي رسمي لبطولة جولة الإمارات للدراجات. غطّت حفل الافتتاح وخط الانطلاق ومراحل السباق عبر الشارقة — جمعت بين لقطات الأكشن السريعة والتوثيق الرسمي بحضور كبار المسؤولين.",
+          tags: ["رياضة", "تغطية رسمية", "بث مباشر"],
+        },
+        {
+          num: "٠٤",
+          title: 'برنامج "أغلى من الذهب"',
+          subtitle: "إنتاج تلفزيوني — LBC وMBC و5 قنوات أخرى",
+          image: "/images/portfolio-sheikh.jpeg",
+          description: 'عملت كمصوّر ومونتير رئيسي لبرنامج "أغلى من الذهب" الشهير، الذي يُبثّ عبر 7 قنوات عربية منها LBC وMBC وروتانا. أدرت جميع التصوير الميداني وما بعد الإنتاج بالكامل.',
+          tags: ["تلفزيون", "مونتاج", "متعدد القنوات"],
+        },
+        {
+          num: "٠٥",
+          title: "دبي ديزرت كلاسيك — غولف",
+          subtitle: "رياضة — DP World Tour / Rolex Series",
+          image: "/images/portfolio-golf.jpeg",
+          description: "تصوير ميداني رسمي للبطل دبي ديزرت كلاسيك، أحد أبرز فعاليات سلسلة رولكس في DP World Tour. شملت التغطية حفل تسليم الكأس بحضور كبار المسؤولين الإماراتيين.",
+          tags: ["غولف", "تغطية رسمية", "رياضة"],
+        },
+        {
+          num: "٠٦",
+          title: "نموذج التميز الرياضي دبي 2023",
+          subtitle: "حفلات وجوائز",
+          image: "/images/portfolio-excellence.jpeg",
+          description: "تغطية إنتاجية كاملة لحفل نموذج التميز الرياضي دبي 2023 — فعالية جوائز رسمية تُكرّم المتميزين في الرياضة بدبي، برئاسة كبار مسؤولي مجلس دبي الرياضي.",
+          tags: ["جوائز", "حكومي", "رسمي"],
+        },
+      ],
     },
 
     clients: {

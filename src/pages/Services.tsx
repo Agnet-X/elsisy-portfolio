@@ -21,14 +21,14 @@ export default function Services() {
           className="text-center max-w-3xl mx-auto mb-24"
         >
           <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">{t.label}</p>
-          <h1 className="text-5xl md:text-7xl font-serif text-white mb-8">
+          <h1 className="fluid-hero font-serif text-white mb-8">
             {t.title} <span className="italic text-white/50">{t.titleItalic}</span>
           </h1>
-          <p className="text-white/60 font-light text-lg">{t.desc}</p>
+          <p className="fluid-body text-white/60 font-light">{t.desc}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {CONTENT.services.map((service, index) => {
+          {t.items.map((service, index) => {
             const Icon = icons[index % icons.length];
             return (
               <motion.div
@@ -70,8 +70,8 @@ export default function Services() {
           className="mt-32 p-1 relative overflow-hidden rounded-2xl bg-gradient-to-r from-transparent via-primary/30 to-transparent"
         >
           <div className="bg-[#0a0a0a] rounded-xl p-12 md:p-20 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">{t.ctaTitle}</h2>
-            <p className="text-white/60 mb-10 max-w-2xl mx-auto font-light">{t.ctaDesc}</p>
+            <h2 className="fluid-heading font-serif text-white mb-6">{t.ctaTitle}</h2>
+            <p className="fluid-body text-white/60 mb-10 max-w-2xl mx-auto font-light">{t.ctaDesc}</p>
             <a
               href="/contact"
               className="inline-block px-10 py-4 bg-white text-black font-semibold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-colors rounded-sm"

@@ -44,7 +44,7 @@ export default function Home() {
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-9xl font-serif text-white leading-none mb-8 tracking-tighter"
+            className="fluid-hero font-serif text-white mb-8 tracking-tighter"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.7, ease: [0.77, 0, 0.175, 1] }}
@@ -97,7 +97,7 @@ export default function Home() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1 }}
             >
-              <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
+              <h2 className="fluid-title font-serif text-white mb-6">
                 {t.precisionTitle} <br />
                 <span className="text-primary italic">{t.precisionItalic}</span>
               </h2>
@@ -149,7 +149,7 @@ export default function Home() {
               <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">
                 {t.sectionLabel}
               </p>
-              <h2 className="text-4xl md:text-5xl font-serif text-white">
+              <h2 className="fluid-title font-serif text-white">
                 {t.featuredFrames} <span className="italic text-white/50">{t.featuredItalic}</span>
               </h2>
             </div>

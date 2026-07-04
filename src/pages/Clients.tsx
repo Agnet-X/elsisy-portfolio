@@ -18,10 +18,10 @@ export default function Clients() {
           className="text-center mb-24"
         >
           <p className="text-primary tracking-widest uppercase text-xs font-semibold mb-4">{t.label}</p>
-          <h1 className="text-5xl md:text-7xl font-serif text-white mb-8">
+          <h1 className="fluid-hero font-serif text-white mb-8">
             {t.title} <span className="italic text-white/50">{t.titleItalic}</span>
           </h1>
-          <p className="text-white/60 text-lg font-light max-w-2xl mx-auto">{t.desc}</p>
+          <p className="fluid-body text-white/60 font-light max-w-2xl mx-auto">{t.desc}</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -54,8 +54,8 @@ export default function Clients() {
         >
           <div className="bg-[#0a0a0a] rounded-xl p-12 md:p-16 text-center lg:text-left flex flex-col lg:flex-row items-center gap-12 relative z-10">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">{t.qualityTitle}</h2>
-              <p className="text-white/60 font-light leading-relaxed">{t.qualityDesc}</p>
+              <h2 className="fluid-heading font-serif text-white mb-6">{t.qualityTitle}</h2>
+              <p className="fluid-body text-white/60 font-light leading-relaxed">{t.qualityDesc}</p>
             </div>
             <div className="lg:w-1/2 grid grid-cols-2 gap-6 w-full">
               <div className="glass p-6 rounded-lg border border-white/10 text-center">
