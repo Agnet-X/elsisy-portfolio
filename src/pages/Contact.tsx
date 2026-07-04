@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CONTENT } from '@/data/content';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 import { T } from '@/data/translations';
 
@@ -9,15 +9,21 @@ export default function Contact() {
   const { lang } = useLang();
   const t = T[lang].contact;
   const ts = T[lang].services;
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  const [name, setName] = useState('');
+  const [service, setService] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormState('submitting');
-    setTimeout(() => {
-      setFormState('success');
-      setTimeout(() => setFormState('idle'), 3000);
-    }, 1500);
+
+    const phone = CONTENT.identity.phone.replace(/[^0-9]/g, ''); // 971525858702
+    const text = lang === 'ar'
+      ? `السلام عليكم،\nاسمي: ${name}\nالخدمة المطلوبة: ${service}\n\n${message}`
+      : `Hello,\nMy name: ${name}\nService needed: ${service}\n\n${message}`;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
   };
 
   return (
@@ -120,6 +126,8 @@ export default function Contact() {
                     <input
                       type="text"
                       required
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-colors"
                       placeholder={t.namePlaceholder}
                     />
@@ -128,7 +136,6 @@ export default function Contact() {
                     <label className="text-xs uppercase tracking-widest text-white/40 pl-4">{t.emailFieldLabel}</label>
                     <input
                       type="email"
-                      required
                       className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-colors"
                       placeholder={t.emailPlaceholder}
                     />
@@ -138,14 +145,15 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label className="text-xs uppercase tracking-widest text-white/40 pl-4">{t.serviceLabel}</label>
                   <select
-                    defaultValue=""
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
                     className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
                   >
-                    <option value="" disabled>{t.serviceDefault}</option>
+                    <option value="">{t.serviceDefault}</option>
                     {ts.items.map((s, i) => (
                       <option key={i} value={s.title}>{s.title}</option>
                     ))}
-                    <option value="other">{t.serviceOther}</option>
+                    <option value={t.serviceOther}>{t.serviceOther}</option>
                   </select>
                 </div>
 
@@ -154,6 +162,8 @@ export default function Contact() {
                   <textarea
                     required
                     rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-primary transition-colors resize-none"
                     placeholder={t.messagePlaceholder}
                   />
@@ -161,12 +171,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={formState !== 'idle'}
-                  className="w-full bg-white text-black font-semibold uppercase tracking-widest py-4 rounded-xl hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#25D366] text-white font-semibold uppercase tracking-widest py-4 rounded-xl hover:bg-[#1ebe5d] transition-all flex items-center justify-center gap-3"
                 >
-                  {formState === 'idle' && <>{t.sendBtn} <Send size={16} /></>}
-                  {formState === 'submitting' && t.sending}
-                  {formState === 'success' && t.sent}
+                  <MessageCircle size={20} />
+                  {t.sendBtn}
                 </button>
               </form>
             </div>
