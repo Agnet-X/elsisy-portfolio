@@ -26,8 +26,8 @@ export default function Home() {
         <motion.div className="absolute inset-0 z-0" style={{ y, opacity }}>
           <div className="absolute inset-0 bg-black/60 z-10" />
           <div
-            className="w-full h-full bg-cover bg-right bg-no-repeat"
-            style={{ backgroundImage: "url('/images/portrait-hero.jpeg')" }}
+            className="w-full h-full bg-cover bg-no-repeat"
+            style={{ backgroundImage: "url('/images/portrait-hero.jpeg')", backgroundPosition: '70% center' }}
           />
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-20 pointer-events-none" />
         </motion.div>
